@@ -1,6 +1,14 @@
-import './styles.css';
-import { greeting } from './greeting.js';
-import chickenSalad1 from "./assets/images/chicken-salad-1.jpg"
+import "./styles.css";
+import "./menu.js";
+import {
+  chickenSaladImages,
+  chickenSaladDesc,
+  meatSaladImages,
+  meatSaladDesc,
+  veganSaladImages,
+  veganSaladDesc,
+} from "./menu.js";
+import { greeting } from "./greeting.js";
 
 // console.log(greeting);
 // const para = document.createElement('h1');
@@ -13,9 +21,18 @@ import chickenSalad1 from "./assets/images/chicken-salad-1.jpg"
 // }
 
 const imageCells = document.getElementsByClassName("meal-image-cell");
-let image = document.createElement("img");
-image.src = chickenSalad1;
-image.className = "meal-image";
-for(const el of imageCells){
-    el.appendChild(image);
+
+// let image = '';
+// let el = ''
+let i = 0;
+for (let el in imageCells) {
+  let el = imageCells[i];
+  let image = document.createElement("img");
+
+  image.src = chickenSaladImages[i];
+
+  i++;
+
+  image.className = "meal-image";
+  el.appendChild(image);
 }
