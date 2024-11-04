@@ -12,7 +12,7 @@ body {
   margin: 0;
 
   background: var(--background);
-  background-image: url('https://img.freepik.com/premium-photo/fresh-vegan-salad-green-ripe-strawberries-summer-vitamin-salad_75924-17231.jpg?w=5000');
+  background-image: url('./assets/images/odin-salad-background.jpg');
   /*centers the position of the bacground photo*/
   background-position: center;
   display: flex;
