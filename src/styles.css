@@ -1,0 +1,130 @@
+/* styles.css */
+
+:root {
+  --green200: #bbf7d0;
+  --green400: #34d399;
+  --green600: #059669;
+  --background: rgb(1, 5, 10);
+  font-family: 'Satisfy', cursive;
+  font-style: italic;
+}
+body {
+  margin: 0;
+
+  background: var(--background);
+  background-image: url('https://img.freepik.com/premium-photo/fresh-vegan-salad-green-ripe-strawberries-summer-vitamin-salad_75924-17231.jpg?w=5000');
+  /*centers the position of the bacground photo*/
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-repeat: no-repeat;
+}
+
+/* #salad-background {
+  margin: 0px;
+  padding: 0px;
+  width: max-content;
+  height: max-content;
+} */
+header {
+  width: clamp(300px, 50%, 60vw);
+  /* margin-top: 100px; */
+  height: 200px;
+  /* position: absolute; */
+  display: flex;
+  flex-direction: column;
+}
+
+#rest-name {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 10%;
+  color: white;
+  font-size: 25px;
+  font-weight: lighter;
+}
+
+#navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  height: 100%;
+  margin-left: 10%;
+  gap: 20px;
+}
+
+.nav-button {
+  border-top-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 0px;
+  height: 50px;
+  box-shadow: 0px -4px 5px var(--background);
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  border-color: white;
+  transition: 0.2s;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+  font-family: 'Satisfy', cursive;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#content {
+  width: clamp(300px, 50%, 70vw);
+  height: min(70vh);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-flow: row;
+  justify-items: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.meal-cell {
+  border-radius: 17px;
+  width: 200px;
+  height: 200px;
+  box-shadow: 0px -4px 5px var(--background);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 1fr;
+}
+
+.meal-image-cell {
+  background-color: white;
+  width: 200px;
+  height: 100%;
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+}
+
+.meal-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.meal-image {
+  width: 200px;
+  height: 100%;
+  z-index: -1;
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+}
+
+.meal-description {
+  box-shadow: 0px -2px 20px var(--background);
+  color: white;
+  font-weight: 200;
+}
