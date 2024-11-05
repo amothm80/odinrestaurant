@@ -1,38 +1,39 @@
-import "./styles.css";
-import "./menu.js";
-import {
-  chickenSaladImages,
-  chickenSaladDesc,
-  meatSaladImages,
-  meatSaladDesc,
-  veganSaladImages,
-  veganSaladDesc,
-} from "./menu.js";
-import { greeting } from "./greeting.js";
+import './styles.css';
+import { chickenMenu } from './chickenMenu.js';
+import { meatMenu } from './meatMenu.js';
+import { veganMenu } from './veganMenu.js';
 
-// console.log(greeting);
-// const para = document.createElement('h1');
-// const node = document.createTextNode(greeting);
-// para.appendChild(node);
-
-// const elements = document.getElementsByTagName('body');
-// for (const el of elements) {
-//   el.appendChild(para);
-// }
-
-const imageCells = document.getElementsByClassName("meal-image-cell");
-
-// let image = '';
-// let el = ''
-let i = 0;
-for (let el in imageCells) {
-  let el = imageCells[i];
-  let image = document.createElement("img");
-
-  image.src = chickenSaladImages[i];
-
-  i++;
-
-  image.className = "meal-image";
-  el.appendChild(image);
+function init() {
+  let mainContent = document.getElementById('content');
+  mainContent.innerHTML = '';
+  let menuList = chickenMenu.buildMenu(1);
+  for (let el of menuList) {
+    mainContent.appendChild(el);
+  }
 }
+
+const page = (function () {
+  let buttons = document.querySelectorAll('.nav-button');
+  init();
+  for (let btn of buttons) {
+    btn.onclick = function () {
+      let mainContent = document.getElementById('content');
+      mainContent.innerHTML = '';
+      let menuList = '';
+      switch (btn.id) {
+        case 'chicken-salads-button':
+          menuList = chickenMenu.buildMenu();
+          break;
+        case 'meat-salads-button':
+          menuList = meatMenu.buildMenu();
+          break;
+        case 'vegan-salads-button':
+          menuList = veganMenu.buildMenu();
+          break;
+      }
+      for (let el of menuList) {
+        mainContent.appendChild(el);
+      }
+    };
+  }
+})();
